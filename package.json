@@ -1,0 +1,35 @@
+{
+  "name": "pull-data-into-notes",
+  "module": "src/main.ts",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "start": "bun run src/main.ts",
+    "watch": "bun --watch src/main.ts "
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@vitest/coverage-istanbul": "^3.1.4",
+    "@vitest/ui": "^3.1.4",
+    "vitest": "^3.1.4"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "@mozilla/readability": "^0.6.0",
+    "@types/he": "^1.2.3",
+    "@types/jsdom": "^21.1.7",
+    "@types/turndown": "^5.0.5",
+    "bert-tokenizer": "^1.1.8",
+    "cheerio": "^1.0.0",
+    "date-fns": "^4.1.0",
+    "i": "^0.3.7",
+    "jsdom": "^26.1.0",
+    "npm": "^11.4.1",
+    "onnxruntime-node": "^1.22.0",
+    "turndown": "^7.2.0",
+    "undici": "^7.10.0",
+    "youtube-transcript": "^1.2.1"
+  }
+}
