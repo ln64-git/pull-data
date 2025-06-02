@@ -19,13 +19,25 @@ export async function pullWebpage(url: string): Promise<string> {
     headingStyle: 'atx',
   });
 
-  // Optional: Add GitHub-flavored markdown options
-  turndownService.addRule('preToCodeBlock', {
-    filter: ['pre'],
+  turndownService.addRule('codeEscaping', {
+    filter: ['code'],
     replacement: (content) => {
-      return `\n\`\`\`\n${content.trim()}\n\`\`\`\n`;
+      return `\`${escapeMarkdownSyntaxInsideCode(content)}\``;
     }
   });
+
+  turndownService.addRule('preCodeEscaping', {
+    filter: ['pre'],
+    replacement: (content) => {
+      return `\n\`\`\`\n${escapeMarkdownSyntaxInsideCode(content)}\n\`\`\`\n`;
+    }
+  });
+
+  function escapeMarkdownSyntaxInsideCode(code: string): string {
+    return code
+      .replace(/_/g, '\\_')     // escape underscores
+      .replace(/\*/g, '\\*');   // escape asterisks
+  }
 
   const content = article.content ?? '';
   const markdown = turndownService.turndown(content);
