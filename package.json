@@ -17,6 +17,8 @@
     "typescript": "^5"
   },
   "dependencies": {
+    "@langchain/community": "^0.3.48",
+    "@langchain/core": "^0.3.62",
     "@mozilla/readability": "^0.6.0",
     "@types/he": "^1.2.3",
     "@types/jsdom": "^21.1.7",
@@ -30,6 +32,8 @@
     "onnxruntime-node": "^1.22.0",
     "turndown": "^7.2.0",
     "undici": "^7.10.0",
-    "youtube-transcript": "^1.2.1"
+    "youtube-transcript": "^1.2.1",
+    "youtube-transcript-api": "^3.0.6",
+    "youtubei.js": "^14.0.0"
   }
 }

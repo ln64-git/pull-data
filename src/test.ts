@@ -1,12 +1,10 @@
-import { pullYoutubeTranscript } from "./pull-data/utils/pull-youtube"
+import { YoutubeLoader } from "@langchain/community/document_loaders/web/youtube";
 
-const video = "https://www.youtube.com/watch?v=cI1SotLa7Wg"
+const loader = YoutubeLoader.createFromUrl("https://youtu.be/bZQun8Y4L2A", {
+  language: "en",
+  addVideoInfo: true,
+});
 
-async function test() {
+const docs = await loader.load();
 
-  const data = await pullYoutubeTranscript(video)
-  console.log(JSON.stringify(data, null, 2));
-
-}
-
-test()
+console.log(docs);
