@@ -41,5 +41,6 @@ export async function pullWebpage(url: string): Promise<string> {
 
   const content = article.content ?? '';
   const markdown = turndownService.turndown(content);
+  console.log("markdown: ", markdown);
   return markdown.trim();
 }
